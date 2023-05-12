@@ -2,6 +2,10 @@ import React from 'react'
 
 export default function Main() {
   return (
-    <div>Home</div>
+    <div className=''>
+      
+      Home Hey i am Home
+
+    </div>
   )
 }
