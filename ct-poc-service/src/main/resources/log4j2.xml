@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<Configuration monitorInterval="60">
+    <Properties>
+        <Property name="log-path">@log4j2.path@</Property>
+        <Property name="archive">@log4j2.path@/archive</Property>
+        <Property name="springAppName" value="@spring.application.name@"></Property>
+    </Properties>
+    <Appenders>
+        <Console name="Console-Appender" target="SYSTEM_OUT">
+            <PatternLayout>
+                <pattern>
+                    [%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] [${springAppName},%X{X-B3-TraceId},%X{X-B3-SpanId}] %c{1} - %msg%n
+                </pattern>
+            </PatternLayout>
+        </Console>
+        <RollingFile name="RollingFile-Appender" fileName="@log4j2.path@/${springAppName}.log" filePattern="@log4j2.path@/${springAppName}.log.%d{yyyy-MM-dd}">
+            <PatternLayout pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] [${springAppName},%X{X-B3-TraceId},%X{X-B3-SpanId}] %c{1} - %msg%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+            <DefaultRolloverStrategy max="100"/>
+        </RollingFile>
+    </Appenders>
+
+    <Loggers>
+        <Logger name="com.cpt" level="info" additivity="false">
+            <AppenderRef ref="RollingFile-Appender" level="info"/>
+            <!--<AppenderRef ref="RollingFile-Appender-Json" level="info"/>-->
+        </Logger>
+        <Root level="debug">
+            <AppenderRef ref="Console-Appender" level="debug"/>
+            <AppenderRef ref="RollingFile-Appender" level="info"/>
+        </Root>
+    </Loggers>
+</Configuration>
