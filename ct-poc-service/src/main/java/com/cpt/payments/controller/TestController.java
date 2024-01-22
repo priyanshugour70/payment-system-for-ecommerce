@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.cpt.payments.pojo.AddRequest;
 import com.cpt.payments.pojo.AddResponse;
+import com.cpt.payments.service.TestService;
 
 @RestController
 @RequestMapping("/controller")
@@ -52,6 +53,27 @@ public class TestController {
 		System.out.println("calling processJSON::request:" + request);
 		
 		int res = request.getNum1() + request.getNum2();
+		
+		AddResponse response = new AddResponse();
+		response.setResValue(res);
+		
+		System.out.println("Add res : " + response);
+		
+		return response;
+	}
+	
+	
+	@PostMapping("/validateAndProcess")
+	@ResponseBody
+	public AddResponse validateAndProcess(@RequestBody AddRequest request) {
+		
+		System.out.println("calling processJSON::request:" + request);
+		
+		
+		TestService service = new TestService();
+		
+		
+		int res = service.validateAndProcess(request);
 		
 		AddResponse response = new AddResponse();
 		response.setResValue(res);
