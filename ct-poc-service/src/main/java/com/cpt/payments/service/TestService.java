@@ -9,7 +9,7 @@ public class TestService {
 	private String secretKey = "ecom-ct-secret123";
 	
 	
-	public int validateAndProcess(AddRequest req) {
+	public int validateAndProcess(AddRequest req, String clientSignature) {
 		
 		Gson gson = new Gson();
 		String jsonRequest = gson.toJson(req);
@@ -18,6 +18,13 @@ public class TestService {
 		
 		System.out.println("inputString : " + jsonRequest);
 		System.out.println("generatedSig : " + generatedSig);
+		
+		if(generatedSig.equals(clientSignature)) {
+			// process logic
+			return req.getNum1() + req.getNum2();
+		} else {
+			// failure
+		}
 		
 		return -1;
 	}

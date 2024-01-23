@@ -3,6 +3,7 @@ package com.cpt.payments.controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -65,15 +66,15 @@ public class TestController {
 	
 	@PostMapping("/validateAndProcess")
 	@ResponseBody
-	public AddResponse validateAndProcess(@RequestBody AddRequest request) {
+	public AddResponse validateAndProcess(@RequestHeader("signature") String signature  ,@RequestBody AddRequest request) {
 		
-		System.out.println("calling processJSON::request:" + request);
+		System.out.println("calling processJSON::request:" + request + " | Signature : " + signature);
 		
 		
 		TestService service = new TestService();
 		
 		
-		int res = service.validateAndProcess(request);
+		int res = service.validateAndProcess(request, signature);
 		
 		AddResponse response = new AddResponse();
 		response.setResValue(res);
