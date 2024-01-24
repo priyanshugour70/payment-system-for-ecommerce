@@ -32,7 +32,7 @@
 			</activation>
 			<properties>
 				<spring.profiles.active>local</spring.profiles.active>
-				<log4j2.path>D:\\workspace\\ct-project\\10Sep\\logs\\ct-poc-service</log4j2.path>
+				<log4j2.path>/Users/priyanshugour/Desktop/SDE-Prep/payment-integration-for-ecommerce/Logs</log4j2.path>
 			</properties>
 		</profile>
 		<profile>

@@ -1,5 +1,7 @@
 package com.cpt.payments.controller;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,6 +19,8 @@ import com.cpt.payments.service.TestService;
 @RequestMapping("/controller")
 public class TestController {
 	
+	private static final Logger Logger = LogManager.getLogger(TestController.class);
+	
 	@GetMapping("/hello")
 	public String sayHello() {
 		return "Hello World..!";
@@ -30,6 +34,15 @@ public class TestController {
 		int res = val1 + val2;
 		
 		System.out.println("Add res : " + res);
+		
+		
+		Logger.debug("This is a DEBUG message");
+		Logger.info("This is a INFO message");
+		Logger.warn("This is a WARN message");
+		Logger.error("This is a ERROR message");
+		Logger.trace("This is a TRACE message");
+		
+		
 		
 		return res;
 	}
