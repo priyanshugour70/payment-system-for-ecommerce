@@ -32,7 +32,7 @@
 			</activation>
 			<properties>
 				<spring.profiles.active>local</spring.profiles.active>
-				<log4j2.path>/Users/priyanshugour/Desktop/SDE-Prep/payment-integration-for-ecommerce/Logs/payment-validation-service</log4j2.path>
+				<log4j2.path>/Users/priyanshugour/Desktop/SDE-Prep/payment-system-for-ecommerce/Logs/payment-validation-service</log4j2.path>
 			</properties>
 		</profile>
 		<profile>
