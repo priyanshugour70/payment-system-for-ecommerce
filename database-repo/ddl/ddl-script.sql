@@ -1,3 +1,5 @@
+SELECT user, host FROM mysql.user;
+
 drop database payments;
 drop database trustly;
 drop database validations;
@@ -16,14 +18,15 @@ create database trustly;
 
 
 -- Creates user & grants permission
-CREATE USER 'validations'@'%' IDENTIFIED BY 'cptraining';
-GRANT ALL ON *.* TO 'validations'@'%' ;
 
-CREATE USER 'payments'@'%' IDENTIFIED BY 'cptraining';
-GRANT ALL ON *.* TO 'payments'@'%' ;
+CREATE USER 'trustly'@'localhost' IDENTIFIED BY 'Harda20p!';
+GRANT ALL PRIVILEGES ON trustly.* TO 'trustly'@'localhost';
 
-CREATE USER 'trustly'@'%' IDENTIFIED BY 'cptraining';
-GRANT ALL ON *.* TO 'trustly'@'%' ;
+CREATE USER 'validations'@'localhost' IDENTIFIED BY 'Harda20p!';
+GRANT ALL PRIVILEGES ON validations.* TO 'validations'@'localhost';
+
+CREATE USER 'payments'@'localhost' IDENTIFIED BY 'Harda20p!';
+GRANT ALL PRIVILEGES ON payments.* TO 'payments'@'localhost';
 
 
 -- Create Tables validations Schema Start***
