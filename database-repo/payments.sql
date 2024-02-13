@@ -1,53 +1,14 @@
-SELECT user, host FROM mysql.user;
-
 drop database payments;
-drop database trustly;
-drop database validations;
 
 
-drop user 'validations'@'%';
 drop user 'payments'@'%';
-drop user 'trustly'@'%';
 
 
-
--- Creates databases
-create database validations;
 create database payments;
-create database trustly;
 
 
--- Creates user & grants permission
-
-CREATE USER 'trustly'@'localhost' IDENTIFIED BY 'Harda20p!';
-GRANT ALL PRIVILEGES ON trustly.* TO 'trustly'@'localhost';
-
-CREATE USER 'validations'@'localhost' IDENTIFIED BY 'Harda20p!';
-GRANT ALL PRIVILEGES ON validations.* TO 'validations'@'localhost';
-
-CREATE USER 'payments'@'localhost' IDENTIFIED BY 'Harda20p!';
+CREATE USER 'payments'@'localhost' IDENTIFIED BY 'rootpay';
 GRANT ALL PRIVILEGES ON payments.* TO 'payments'@'localhost';
-
-
--- Create Tables validations Schema Start***
-CREATE TABLE validations.`User` (
- `id` int NOT NULL AUTO_INCREMENT,
- `email` varchar(500) NOT NULL,
- `phoneNumber` varchar(500) DEFAULT NULL,
- `firstName` varchar(2000) NOT NULL,
- `lastName` varchar(2000) NOT NULL,
- `creationDate` timestamp(2) NOT NULL DEFAULT CURRENT_TIMESTAMP(2),
- PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-CREATE TABLE validations.`merchant_payment_request` (
- `id` int NOT NULL AUTO_INCREMENT,
- `merchantTransactionReference` varchar(50) NOT NULL,
- `transactionRequest` text DEFAULT NULL,
- `creationDate` timestamp(2) NOT NULL DEFAULT CURRENT_TIMESTAMP(2),
- PRIMARY KEY (`id`),
-UNIQUE KEY (`merchantTransactionReference`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
--- Create Tables validations Schema End***
 
 
 -- Create Tables payments Schema Start***
@@ -138,13 +99,45 @@ CREATE TABLE payments.`Transaction_Log` (
 
 
 
--- Create Tables trustly Schema Start***
-CREATE TABLE trustly.`provider_request_response` (
- `id` int NOT NULL AUTO_INCREMENT,
- `transactionReference` varchar(50) NOT NULL,
- `request` TEXT,
- `response` TEXT,
- `creationDate` timestamp(2) NOT NULL DEFAULT CURRENT_TIMESTAMP(2),
- PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
--- Create Tables trustly Schema End***
+-- data started
+
+INSERT INTO payments.Transaction_Details
+(id, code, message, status, creationDate)
+VALUES(1, '000.001', 'payment created', 1, '2023-09-10 19:05:16.01');
+INSERT INTO payments.Transaction_Details
+(id, code, message, status, creationDate)
+VALUES(2, '000.002', 'payment pending', 1, '2023-09-10 19:05:16.01');
+INSERT INTO payments.Transaction_Details
+(id, code, message, status, creationDate)
+VALUES(3, '000.003', 'payment approved', 1, '2023-09-10 19:05:16.01');
+INSERT INTO payments.Transaction_Details
+(id, code, message, status, creationDate)
+VALUES(4, '000.004', 'payment failed', 1, '2023-09-10 19:05:16.01');
+
+
+
+INSERT INTO payments.Payment_Method
+(id, name, status, creationDate)
+VALUES(1, 'APM', 1, '2023-09-10 21:29:49.25');
+INSERT INTO payments.Payment_Type
+(id, `type`, status, creationDate)
+VALUES(1, 'SALE', 1, '2023-09-10 21:30:42.05');
+
+INSERT INTO payments.Provider
+(id, providerName, status, creationDate)
+VALUES(1, 'Trustly', 1, '2023-09-10 21:31:28.08');
+
+INSERT INTO payments.Transaction_Status
+(id, name, status, creationDate)
+VALUES(1, 'CREATED', 1, '2023-09-10 21:33:39.84');
+INSERT INTO payments.Transaction_Status
+(id, name, status, creationDate)
+VALUES(2, 'PENDING', 2, '2023-09-10 21:33:39.84');
+INSERT INTO payments.Transaction_Status
+(id, name, status, creationDate)
+VALUES(3, 'APPROVED', 3, '2023-09-10 21:33:39.84');
+INSERT INTO payments.Transaction_Status
+(id, name, status, creationDate)
+VALUES(4, 'FAILED', 4, '2023-09-10 21:33:39.84');
+
+-- data ended
