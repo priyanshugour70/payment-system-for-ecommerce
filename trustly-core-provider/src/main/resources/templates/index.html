@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trustly Demo Page</title>
+</head>
+<body>
+    <h1>Trustly Demo Page</h1>
+    
+    <button id="successButton">SUCCESS</button>
+    <button id="failureButton">FAILURE</button>
+
+    <script>
+		// Function to get the value of a URL parameter by name
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+
+        // Get the value of the "param" parameter from the URL
+        var tokenValue = getParameterByName('token');
+        
+        console.log("token value:" + tokenValue)
+		
+        document.getElementById("successButton").addEventListener("click", function () {
+            // Make an API call for success
+            fetch("/payment/success/" + tokenValue, {
+				method: "POST",
+	            headers: {
+	                "Content-Type": "application/json"
+	            }
+			})
+               .then(response => {
+		            alert("Success: " + response.status + " - Success done");
+		        })
+		        .catch(error => {
+		            alert("Error: " + error);
+		        });
+        });
+
+        document.getElementById("failureButton").addEventListener("click", function () {
+            // Make an API call for failure
+            fetch("/payment/fail/" + tokenValue, {
+				method: "POST",
+	            headers: {
+	                "Content-Type": "application/json"
+	            }
+			})
+                .then(response => {
+		            alert("Failure: " + response.status + " - Failure done");
+		        })
+		        .catch(error => {
+		            alert("Error: " + error);
+		        });
+        });
+    </script>
+</body>
+</html>
