@@ -1,5 +1,7 @@
+
 /.metadata/
+.sonarlint
+
 
 /Logs
-
-.sonarlint
+/DOCS/

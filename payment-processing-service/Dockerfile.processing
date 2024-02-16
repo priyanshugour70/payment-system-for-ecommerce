@@ -1,0 +1,20 @@
+# Use the official OpenJDK 8 image as a base image
+FROM openjdk:8-jdk-alpine
+
+# install maven
+RUN apk add --no-cache maven
+
+# Set the working directory to /app
+WORKDIR /app
+
+# Copy the current directory contents into the container at /app
+COPY . /app
+
+# Build the application
+RUN mvn clean package
+
+# Expose port 8082
+EXPOSE 8082
+
+# Define the entry point for the application
+ENTRYPOINT ["java", "-jar", "target/payment-processing-service.jar"]
