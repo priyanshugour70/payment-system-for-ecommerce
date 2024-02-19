@@ -1,7 +1,0 @@
-version: '3'  # Use version 3 of the Docker Compose syntax
-
-services:    # Define the services that make up your application
-  web:       # Service name (you can choose any name)
-    image: nginx:latest  # Docker image to use for this service
-    ports:
-      - "80:80"  # Map port 80 on the host to port 80 on the container

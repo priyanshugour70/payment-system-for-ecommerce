@@ -1,0 +1,3 @@
+# MySQL DB for Trustlydb
+FROM mysql:8.12.0
+
