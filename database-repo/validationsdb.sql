@@ -1,7 +1,7 @@
-drop database validations;
+-- drop database validations;
 
 
-drop user 'validations'@'%';
+-- drop user 'validations'@'%';
 
 
 create database validations;

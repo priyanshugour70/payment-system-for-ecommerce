@@ -1,21 +1,18 @@
 # MySQL DB for Payments
 
-# Use the official MySQL image from Docker Hub
+# Use the official MySQL image as the base image
 FROM mysql:latest
 
-# Set environment variables for MySQL
-ENV MYSQL_ROOT_PASSWORD=root_password
-ENV MYSQL_DATABASE=paymentsdb
-ENV MYSQL_USER=db_user
-ENV MYSQL_PASSWORD=db_password
+# Set the root user and password
+ENV MYSQL_ROOT_PASSWORD=rootpassword
 
 # Copy the SQL scripts into the container
 COPY paymentsdb.sql /docker-entrypoint-initdb.d/
-COPY validationsdb.sql /docker-entrypoint-initdb.d/
 COPY trustlydb.sql /docker-entrypoint-initdb.d/
+COPY validationsdb.sql /docker-entrypoint-initdb.d/
 
 # Expose the MySQL port
 EXPOSE 3306
 
-# CMD instruction to start MySQL server
+# Command to run when the container starts
 CMD ["mysqld"]

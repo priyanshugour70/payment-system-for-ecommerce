@@ -1,7 +1,7 @@
-drop database payments;
+-- drop database payments;
 
 
-drop user 'payments'@'%';
+-- drop user 'payments'@'%';
 
 
 create database payments;

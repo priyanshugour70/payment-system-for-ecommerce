@@ -1,7 +1,7 @@
-drop database trustly;
+-- drop database trustly;
 
 
-drop user 'trustly'@'%';
+-- drop user 'trustly'@'%';
 
 
 create database trustly;
