@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import com.cpt.payments.dao.ProviderRequestResponseDao;
 import com.cpt.payments.dto.ProviderRequestResponseDto;
 import com.cpt.payments.http.HttpRequest;
-import com.cpt.payments.pojo.response.TrustlyCoreResponse;
+// import com.cpt.payments.pojo.response.TrustlyCoreResponse;
 import com.cpt.payments.util.JsonUtils;
 import com.cpt.payments.util.LogMessage;
 import com.cpt.payments.util.SHA256RSASignatureVerifier;

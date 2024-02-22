@@ -1,0 +1,38 @@
+version: '3'
+services:
+  database:
+    build:
+      context: ./database-repo
+      dockerfile: Dockerfile.paymentsystem
+    ports:
+      - "3306:3306"
+    environment: 
+      MYSQL_ROOT_PASSWORD: rootpassword
+
+  payment-validation:
+    build:
+      context: ./payment-validation-service
+      dockerfile: Dockerfile.validation
+    ports:
+      - "8081:8081"
+
+  payment-processing:
+    build:
+      context: ./payment-processing-service
+      dockerfile: Dockerfile.processing
+    ports:
+      - "8082:8082"
+
+  trustly-payment:
+    build:
+      context: ./trustly-payment-provider
+      dockerfile: Dockerfile.payment
+    ports:
+      - "8083:8083"
+
+  trustly-core:
+    build:
+      context: ./trustly-core-provider
+      dockerfile: Dockerfile.core
+    ports:
+      - "8084:8084"

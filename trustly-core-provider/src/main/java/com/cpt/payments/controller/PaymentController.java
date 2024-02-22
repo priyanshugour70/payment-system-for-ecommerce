@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cpt.payments.constants.ControllerEndpoints;
-import com.cpt.payments.constants.ErrorCodeEnum;
-import com.cpt.payments.exception.ValidationException;
+// import com.cpt.payments.constants.ErrorCodeEnum;
+// import com.cpt.payments.exception.ValidationException;
 import com.cpt.payments.pojo.request.CoreTrustlyProvider;
 import com.cpt.payments.pojo.response.TrustlyCoreResponse;
 import com.cpt.payments.service.PaymentService;
