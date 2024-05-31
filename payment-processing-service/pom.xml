@@ -29,7 +29,7 @@
 			</activation>
 			<properties>
 				<spring.profiles.active>local</spring.profiles.active>
-				<log4j2.path>/Users/priyanshugour/Desktop/SDE-Prep/payment-system-for-ecommerce/Logs/payment-processing-service</log4j2.path>
+				<log4j2.path>/Users/priyanshugour/Desktop/ResumeProjects/payment-system-for-ecommerce/Logs/</log4j2.path>
 			</properties>
 		</profile>
 		<profile>

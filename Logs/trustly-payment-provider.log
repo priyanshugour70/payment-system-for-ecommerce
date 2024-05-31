@@ -1,0 +1,19 @@
+[INFO ] 2024-05-31 15:00:41.449 [main] [trustly-payment-provider,,] TrustlyPaymentProviderApplication - Starting TrustlyPaymentProviderApplication using Java 1.8.0_391 on MacBook-Air-M2.local with PID 23423 (/Users/priyanshugour/Desktop/ResumeProjects/payment-system-for-ecommerce/trustly-payment-provider/target/classes started by priyanshugour in /Users/priyanshugour/Desktop/ResumeProjects/payment-system-for-ecommerce)
+[DEBUG] 2024-05-31 15:00:41.452 [main] [trustly-payment-provider,,] TrustlyPaymentProviderApplication - Running with Spring Boot v2.7.14, Spring v5.3.29
+[INFO ] 2024-05-31 15:00:41.452 [main] [trustly-payment-provider,,] TrustlyPaymentProviderApplication - The following 1 profile is active: "local"
+[INFO ] 2024-05-31 15:00:41.723 [main] [trustly-payment-provider,,] RepositoryConfigurationDelegate - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[INFO ] 2024-05-31 15:00:41.730 [main] [trustly-payment-provider,,] RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5 ms. Found 0 JDBC repository interfaces.
+[INFO ] 2024-05-31 15:00:41.811 [main] [trustly-payment-provider,,] GenericScope - BeanFactory id=46fe9872-aa18-3837-b898-edc00a1ddbca
+[INFO ] 2024-05-31 15:00:42.032 [main] [trustly-payment-provider,,] TomcatWebServer - Tomcat initialized with port(s): 8083 (http)
+[INFO ] 2024-05-31 15:00:42.037 [main] [trustly-payment-provider,,] Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8083"]
+[INFO ] 2024-05-31 15:00:42.038 [main] [trustly-payment-provider,,] StandardService - Starting service [Tomcat]
+[INFO ] 2024-05-31 15:00:42.038 [main] [trustly-payment-provider,,] StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.78]
+[INFO ] 2024-05-31 15:00:42.142 [main] [trustly-payment-provider,,] [/] - Initializing Spring embedded WebApplicationContext
+[INFO ] 2024-05-31 15:00:42.142 [main] [trustly-payment-provider,,] ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 657 ms
+[INFO ] 2024-05-31 15:00:42.537 [main] [trustly-payment-provider,,] HikariDataSource - HikariPool-1 - Starting...
+[INFO ] 2024-05-31 15:00:42.718 [main] [trustly-payment-provider,,] HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] 2024-05-31 15:00:42.847 [main] [trustly-payment-provider,,] Http11NioProtocol - Starting ProtocolHandler ["http-nio-8083"]
+[INFO ] 2024-05-31 15:00:42.858 [main] [trustly-payment-provider,,] TomcatWebServer - Tomcat started on port(s): 8083 (http) with context path ''
+[INFO ] 2024-05-31 15:00:42.867 [main] [trustly-payment-provider,,] TrustlyPaymentProviderApplication - Started TrustlyPaymentProviderApplication in 1.598 seconds (JVM running for 2.114)
+[INFO ] 2024-05-31 15:00:52.515 [SpringApplicationShutdownHook] [trustly-payment-provider,,] HikariDataSource - HikariPool-1 - Shutdown initiated...
+[INFO ] 2024-05-31 15:00:52.532 [SpringApplicationShutdownHook] [trustly-payment-provider,,] HikariDataSource - HikariPool-1 - Shutdown completed.

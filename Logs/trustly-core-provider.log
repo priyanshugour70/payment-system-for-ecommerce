@@ -1,0 +1,18 @@
+[INFO ] 2024-05-31 14:55:14.491 [main] [trustly-core-provider,,] TrustlyMockProviderApplication - Starting TrustlyMockProviderApplication using Java 1.8.0_391 on MacBook-Air-M2.local with PID 23159 (/Users/priyanshugour/Desktop/ResumeProjects/payment-system-for-ecommerce/trustly-core-provider/target/classes started by priyanshugour in /Users/priyanshugour/Desktop/ResumeProjects/payment-system-for-ecommerce)
+[DEBUG] 2024-05-31 14:55:14.494 [main] [trustly-core-provider,,] TrustlyMockProviderApplication - Running with Spring Boot v2.7.14, Spring v5.3.29
+[INFO ] 2024-05-31 14:55:14.494 [main] [trustly-core-provider,,] TrustlyMockProviderApplication - The following 1 profile is active: "local"
+[INFO ] 2024-05-31 14:55:14.892 [main] [trustly-core-provider,,] GenericScope - BeanFactory id=2ef7a5cc-95c6-3c82-8e6f-145895ee263e
+[INFO ] 2024-05-31 14:55:15.104 [main] [trustly-core-provider,,] TomcatWebServer - Tomcat initialized with port(s): 8084 (http)
+[INFO ] 2024-05-31 14:55:15.109 [main] [trustly-core-provider,,] Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8084"]
+[INFO ] 2024-05-31 14:55:15.110 [main] [trustly-core-provider,,] StandardService - Starting service [Tomcat]
+[INFO ] 2024-05-31 14:55:15.110 [main] [trustly-core-provider,,] StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.78]
+[INFO ] 2024-05-31 14:55:15.212 [main] [trustly-core-provider,,] [/] - Initializing Spring embedded WebApplicationContext
+[INFO ] 2024-05-31 14:55:15.212 [main] [trustly-core-provider,,] ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 686 ms
+[INFO ] 2024-05-31 14:55:15.592 [main] [trustly-core-provider,,] WelcomePageHandlerMapping - Adding welcome page template: index
+[INFO ] 2024-05-31 14:55:15.802 [main] [trustly-core-provider,,] EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+[INFO ] 2024-05-31 14:55:15.834 [main] [trustly-core-provider,,] Http11NioProtocol - Starting ProtocolHandler ["http-nio-8084"]
+[INFO ] 2024-05-31 14:55:15.845 [main] [trustly-core-provider,,] TomcatWebServer - Tomcat started on port(s): 8084 (http) with context path ''
+[INFO ] 2024-05-31 14:55:15.859 [main] [trustly-core-provider,,] TrustlyMockProviderApplication - Started TrustlyMockProviderApplication in 1.51 seconds (JVM running for 1.834)
+[INFO ] 2024-05-31 14:55:16.247 [RMI TCP Connection(5)-127.0.0.1] [trustly-core-provider,,] [/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO ] 2024-05-31 14:55:16.247 [RMI TCP Connection(5)-127.0.0.1] [trustly-core-provider,,] DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[INFO ] 2024-05-31 14:55:16.248 [RMI TCP Connection(5)-127.0.0.1] [trustly-core-provider,,] DispatcherServlet - Completed initialization in 1 ms

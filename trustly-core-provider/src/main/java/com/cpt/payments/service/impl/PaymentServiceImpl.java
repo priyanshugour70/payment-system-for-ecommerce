@@ -22,11 +22,11 @@ import com.cpt.payments.pojo.response.ResponseData;
 import com.cpt.payments.pojo.response.Result;
 import com.cpt.payments.pojo.response.TrustlyCoreResponse;
 import com.cpt.payments.service.PaymentService;
-// import com.cpt.payments.util.JsonUtils;
+import com.cpt.payments.util.JsonUtils;
 import com.cpt.payments.util.LogMessage;
 import com.cpt.payments.util.SHA256RSASignatureVerifier;
 import com.cpt.payments.util.SignatureCreator;
-// import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.google.gson.Gson;
 
 @Component
